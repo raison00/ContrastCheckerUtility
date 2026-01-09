@@ -45,6 +45,25 @@ Icon(
     tint = MaterialTheme.colorScheme.success // Automatically picks the right green
 )
 ```
+
+# Accessibility Check Composable
+```
+@Composable
+fun AccessibilityCheck() {
+    val bgColor = MaterialTheme.colorScheme.tertiary
+    val textColor = MaterialTheme.colorScheme.onTertiary
+
+    // Directly use the extension function
+    val ratio = textColor.contrastAgainst(bgColor)
+
+    Text(
+        text = "Contrast Ratio: ${"%.2f".format(ratio)}",
+        color = if (ratio >= 4.5f) Color.White else Color.Yellow
+    )
+}
+```
+
+
 # Accessible ContrastCheckerUtility
 ```
 import androidx.compose.ui.graphics.Color
