@@ -39,7 +39,7 @@ Material 3 provides a robust error role but omits a dedicated success role to re
 - Accessibility First: By defining onSuccess alongside success, we guarantee that text and icons always meet WCAG contrast requirements regardless of the user's theme.
 
 ## Usage Example
-```
+``` kotlin
 Icon(
     imageVector = Icons.Default.CheckCircle,
     tint = MaterialTheme.colorScheme.success // Automatically picks the right green
@@ -47,7 +47,7 @@ Icon(
 ```
 
 # Accessibility Check Composable
-```
+``` kotlin
 @Composable
 fun AccessibilityCheck() {
     val bgColor = MaterialTheme.colorScheme.tertiary
@@ -65,7 +65,7 @@ fun AccessibilityCheck() {
 
 
 # Accessible ContrastCheckerUtility
-```
+``` kotlin
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.luminance
 import kotlin.math.max
@@ -88,9 +88,9 @@ object ContrastChecker {
         return calculateContrast(foreground, background) >= 4.5f
     }
 }
-```
+``` 
 ## Accessibility Debugger UI Component
-```
+``` kotlin
 @Composable
 fun ThemeAccessibilityDashboard() {
     val scheme = MaterialTheme.colorScheme
